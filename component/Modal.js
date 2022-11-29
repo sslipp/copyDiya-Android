@@ -81,27 +81,28 @@ export default function Modal({ reFam }) {
 const styles = StyleSheet.create({
     textLogo: {
         position: 'absolute',
-        bottom: 4,
+        bottom: 75,
         fontFamily: 'ukraineregular',
         fontSize: 19,
-        left: -110
+        left: -120
     }, 
     image: {
-        marginTop: -40,
-        marginLeft: -172,
+        marginTop: -117,
+        marginLeft: -181,
         width: 50,
         height: 50,
         position: 'absolute'
     },
     image2: {
-        marginTop: -29,
-        marginLeft: 133,
+        marginTop: -106,
+        marginLeft: 141,
         width: 42,
         height: 30,
         position: 'absolute'
     },
     buttons: {
-        bottom: 85
+        bottom: 80,
+        left: 20
     },
     buttons2: {
         top: 24,
@@ -109,28 +110,28 @@ const styles = StyleSheet.create({
     },
     menu: {
         left: 310,
-        top: 43,
+        top: 36,
         width: 35,
         height: 23,
         position: 'absolute'
     },
     textN: {
         fontFamily: 'ukraineregular',
-        top: 71,
+        top: 63,
         fontSize: 10,
         left: 310
     },
     settings: {
         width: 35,
         height: 30,
-        top: 50,
+        top: 44,
         left: 30,
         position: 'absolute'
     },
     textD: {
         fontFamily: 'ukraineregular',
         fontSize: 10,
-        top: 81,
+        top: 75,
         left: 18
     },
     poslugy: {
@@ -144,18 +145,18 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
         fontSize: 10,
         top: 105,
-        left: 115
+        left: 113
     },
     message: {
         left: 220,
-        top: 62,
+        top: 60,
         width: 32,
         height: 32,
         position: 'absolute'
     },
     textM: {
         fontFamily: 'ukraineregular',
-        top: 94,
+        top: 92,
         fontSize: 10,
         left: 193
     },
@@ -173,34 +174,34 @@ const styles = StyleSheet.create({
         marginLeft: 11
     },
     menu2: {
-        left: 310,
-        top: 43,
+        left: 316,
+        top: 94,
         width: 35,
         height: 23,
         position: 'absolute'
     },
     textN2: {
         fontFamily: 'ukraineregular',
-        top: 71,
+        top: 120,
         fontSize: 10,
-        left: 310
+        left: 316
     },
     settings2: {
         width: 35,
         height: 30,
-        top: 50,
-        left: 30,
+        top: 102,
+        left: 35,
         position: 'absolute'
     },
     textD2: {
         fontFamily: 'ukraineregular',
         fontSize: 10,
-        top: 81,
-        left: 18
+        top: 132,
+        left: 24
     },
     poslugy2: {
-        left: 119,
-        top: 73,
+        left: 124,
+        top: 130,
         width: 40,
         height: 33,
         position: 'absolute'
@@ -208,20 +209,20 @@ const styles = StyleSheet.create({
     textP2: {
         fontFamily: 'ukraineregular',
         fontSize: 10,
-        top: 105,
-        left: 115
+        top: 163,
+        left: 119
     },
     message2: {
-        left: 220,
-        top: 62,
+        left: 226,
+        top: 118,
         width: 32,
         height: 32,
         position: 'absolute'
     },
     textM2: {
         fontFamily: 'ukraineregular',
-        top: 94,
+        top: 150,
         fontSize: 10,
-        left: 193
+        left: 199
     },
 });

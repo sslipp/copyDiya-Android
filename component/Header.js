@@ -16,14 +16,14 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     image: {
-        marginTop: 30,
-        marginLeft: 15,
+        marginTop: 40,
+        marginLeft: 25,
         width: 50,
-        height: 50
+        height: 50,
     },
     image2: {
-        marginTop: -38,
-        marginLeft: 320,
+        marginTop: -40,
+        marginLeft: 347,
         width: 42,
         height: 30,
         position: 'absolute'
