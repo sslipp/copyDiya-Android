@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput } from 'react-native';
 import Overlay from 'react-native-modal-overlay';
 
 export default function Modal({ reFam }) {
@@ -16,14 +16,8 @@ export default function Modal({ reFam }) {
 
     return (
         <View>
-            <Overlay visible={modalVisible} closeOnTouchOutside childrenWrapperStyle={{ backgroundColor: '#97bdee' }} containerStyle={{ backgroundColor: '#97bdee' }}>
-                <View>
-                    <Image source={require('./../assets/icon.png')} style={styles.image} /><Text style={styles.textLogo}>Налаштування</Text>
-                </View>
-                <View>
-                    <Image source={require('./../assets/qrcode.png')} style={styles.image2} />
-                </View>
-                <Text style={styles.settingsText}></Text>
+            <Overlay visible={modalVisible} onClose={onClose} closeOnTouchOutside childrenWrapperStyle={{ backgroundColor: '#fff', borderRadius: 10 }} containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+                <Text style={styles.settingsText}>Налаштування</Text>
                 <View>
                     <Text style={styles.textSettings}>Редактировать фамилию</Text>
                     <TextInput style={styles.input} onChangeText={onChangeFam} value={Fam} placeholder="Фамилия" />
@@ -35,24 +29,6 @@ export default function Modal({ reFam }) {
                     <TextInput style={styles.input} onChangeText={onChangeDate} value={Date} placeholder="Дата народження: 24.08.1991" />
                     <Text style={styles.textSettings}>Редактировать пол</Text>
                     <TextInput style={styles.input} onChangeText={onChangegender} value={gender} placeholder="Пол" />
-                </View>
-                <View style={styles.buttons2}>
-                    <TouchableOpacity activeOpacity={1}>
-                        <Image style={styles.poslugy2} source={require('./../assets/poslugy.png')} />
-                        <Text style={styles.textP2}>Послуги</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={1}>
-                        <Image style={styles.message2} source={require('./../assets/messages.png')} />
-                        <Text style={styles.textM2}>Повідомлення</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={1} onPress={onClose}>
-                        <Image style={styles.settings2} source={require('./../assets/document.png')} />
-                        <Text style={styles.textD2}>Документи</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={1}>
-                        <Image style={styles.menu2} source={require('./../assets/menu.png')} />
-                        <Text style={styles.textN2}>Меню</Text>
-                    </TouchableOpacity>
                 </View>
                 <Button style={styles.btns} onPress={() => (reFam(Fam, Name, Otche, Date, gender))} title='Изменить' />
             </Overlay>
@@ -85,7 +61,7 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
         fontSize: 19,
         left: -120
-    }, 
+    },
     image: {
         marginTop: -117,
         marginLeft: -181,

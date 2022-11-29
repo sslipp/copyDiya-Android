@@ -159,10 +159,10 @@ const styles = StyleSheet.create({
     CardLine33: {
         borderBottomColor: '#ceebbf',
         borderBottomWidth: 2,
-        marginBottom: 20,
-        width: 280,
+        marginBottom: 10,
+        width: 320,
         bottom: 55,
-        left: 15,
+        left: 20,
         borderRadius: 20
     },
     copyText: {
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
     },
     image: {
         marginTop: -15,
-        marginBottom: 15,
+        marginBottom: 10,
         width: 150,
         height: 200,
         left: 20,
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
         left: 185,
     },
     textCardData44: {
-        top: 10,
+        top: 5,
         left: 183,
     },
     textCardDataText: {
@@ -343,11 +343,11 @@ const styles = StyleSheet.create({
         left: 185
     },
     textCardNumber33: {
-        top: 8,
+        bottom: 5,
         left: 183
     },
     textCardNumber22: {
-        top: 180,
+        top: 211,
         left: 183,
         position: 'absolute'
     },
