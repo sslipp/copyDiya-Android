@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Header from './component/Header';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -40,19 +40,22 @@ export default function App() {
   }
 
   return (
-      <View style={styles.container} onLayout={onLayoutRootView}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
+      <ImageBackground
+        style={{ flex: 1 }}
+        source={{ uri: 'https://i.imgur.com/9RJ6a7N.png', }}>
         <Header />
         <Swipers Fam={Fam} Name={Name} Otch={Otch} Date={Date} gender={gender} />
         <Modal reFam={reFam} />
         <Time />
-      </View>
+      </ImageBackground >
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#97bdee',
   },
   card2: {
     position: 'absolute',

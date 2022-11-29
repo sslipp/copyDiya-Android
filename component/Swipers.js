@@ -100,9 +100,11 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                 </View>
                 <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
                 <View style={styles.CardLine2}>
-                    <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#a6eb98', '#91d4c9']}>
-                        <MarqueeText speed={0.2} marqueeOnStart={true} loop={true} delay={500} style={styles.textCardLine2}>Перевірено Державною податковою службою   РНОКПП дійсний.</MarqueeText>
+                    <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#668afc', '#a9fce8']} style={styles.gradient2}>
                     </LinearGradient>
+                    <View style={styles.marqText2}>
+                        <MarqueeText speed={0.2} marqueeOnStart={true} loop={true} delay={500} style={styles.textCardLine2}>Перевірено Державною податковою службою   РНОКПП дійсний.</MarqueeText>
+                    </View>
                 </View>
                 <View>
                     <View style={styles.Name}>
@@ -165,10 +167,10 @@ const styles = StyleSheet.create({
     },
     copyText: {
         position: 'absolute',
-        top: 225,
-        left: 200,
-        width: 35,
-        height: 35
+        top: 220,
+        left: 230,
+        width: 33,
+        height: 33
     },
     podatki: {
         fontFamily: 'ukraineregular',
@@ -195,19 +197,19 @@ const styles = StyleSheet.create({
     },
     cardPlatnik: {
         backgroundColor: '#efe3ed',
-        width: 310,
-        height: 440,
+        width: 360,
+        height: 500,
         borderRadius: 10,
-        left: 33,
-        top: 30,
+        left: 27,
+        top: 90,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 15,
+            height: 10
         },
-        shadowOpacity: 0.10,
+        shadowOpacity: 0.15,
         shadowRadius: 7.49,
-        elevation: 12,
+        elevation: 15,
     },
     card: {
         backgroundColor: '#fef495',
@@ -227,18 +229,19 @@ const styles = StyleSheet.create({
     },
     card4: {
         backgroundColor: '#e9f5e7',
-        width: 310,
-        height: 440,
+        width: 360,
+        height: 500,
         borderRadius: 10,
-        left: 33,
-        top: 30,
+        left: 27,
+        top: 90,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 10
         },
         shadowOpacity: 0.15,
-        shadowRadius: 6.49
+        shadowRadius: 7.49,
+        elevation: 15,
     },
     cardBack: {
         position: 'absolute',
@@ -299,15 +302,17 @@ const styles = StyleSheet.create({
         bottom: 60,
     },
     textCardLine2: {
-        padding: 15,
         fontFamily: 'ukraineregular',
-        bottom: 8,
-        fontSize: 12
+        fontSize: 12,
+        top: 0
+    },
+    gradient2: {
+        padding: 15
     },
     CardLine2: {
-        width: 310,
+        width: 360,
         height: 25,
-        top: 170
+        top: 175,
     },
     textCardData: {
         top: 10,
@@ -328,6 +333,9 @@ const styles = StyleSheet.create({
         right: 171
     },
     marqText: {
+        bottom: 24
+    },
+    marqText2: {
         bottom: 24
     },
     textCardNumber: {
@@ -351,7 +359,7 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
         fontSize: 13,
         right: 173,
-        bottom: 50
+        bottom: 85
     },
     Name: {
         marginTop: -35
@@ -364,7 +372,7 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
     },
     textName2: {
-        marginTop: -5,
+        marginTop: -20,
         top: 260,
         marginLeft: 15,
         fontSize: 30,
@@ -375,7 +383,7 @@ const styles = StyleSheet.create({
         marginTop: -5,
         top: 100,
         marginLeft: 12,
-        fontSize: 17,
+        fontSize: 16,
         fontFamily: 'ukraineregular',
     },
     kaska: {
