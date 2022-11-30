@@ -75,7 +75,9 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                     </View>
                 </View>
                 <View>
-                    <Image style={styles.settings} source={require('./../assets/settings.png')} />
+                    <Image style={styles.settings} source={{
+							uri: 'https://i.imgur.com/H5IqEW1.jpg',
+						}} />
                 </View>
             </View>
             <View testID="Beutiful" style={styles.cardPlatnik}>
@@ -111,7 +113,7 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                         <Text style={styles.textName2}>1234567890</Text>
                     </View>
                     <TouchableOpacity activeOpacity={1} onPress={copyText}>
-                        <Image style={styles.copyText} source={require('./../assets/copyText.png')} />
+                        <Image style={styles.copyText} source={{uri: 'https://i.imgur.com/DwSw2Cf.jpg'}} />
                     </TouchableOpacity>
                 </View>
             </View>
