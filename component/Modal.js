@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ImageBackground, StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput } from 'react-native';
 import Overlay from 'react-native-modal-overlay';
+import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
 export default function Modal({ reFam }) {
 
@@ -77,16 +78,15 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     buttons: {
-        bottom: 80,
-        left: 20
+        bottom: verticalScale(90)
     },
     buttons2: {
         top: 24,
         right: 147
     },
     menu: {
-        left: 310,
-        top: 36,
+        left: horizontalScale(310),
+        top: 34,
         width: 35,
         height: 23,
         position: 'absolute'
@@ -95,46 +95,46 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
         top: 63,
         fontSize: 10,
-        left: 310
+        left: horizontalScale(310)
     },
     settings: {
-        width: 35,
-        height: 30,
-        top: 44,
-        left: 30,
+        width: horizontalScale(36),
+        height: 33,
+        top: 40,
+        left: horizontalScale(30),
         position: 'absolute'
     },
     textD: {
         fontFamily: 'ukraineregular',
         fontSize: 10,
         top: 75,
-        left: 18
+        left: horizontalScale(18)
     },
     poslugy: {
-        left: 119,
-        top: 73,
-        width: 40,
-        height: 33,
+        left: horizontalScale(119),
+        top: 72,
+        width: horizontalScale(40),
+        height: verticalScale(33),
         position: 'absolute'
     },
     textP: {
         fontFamily: 'ukraineregular',
-        fontSize: 10,
-        top: 105,
-        left: 113
+        fontSize: moderateScale(10),
+        top: 106,
+        left: horizontalScale(113)
     },
     message: {
-        left: 220,
-        top: 60,
-        width: 32,
+        left: horizontalScale(220),
+        top: 58,
+        width: 33,
         height: 32,
         position: 'absolute'
     },
     textM: {
         fontFamily: 'ukraineregular',
         top: 92,
-        fontSize: 10,
-        left: 193
+        fontSize: moderateScale(10),
+        left: horizontalScale(193)
     },
     settingsText: {
         fontFamily: 'ukraineregular',

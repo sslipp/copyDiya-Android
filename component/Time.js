@@ -1,23 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
 export default function Time() {
     function addLeadingZero(d) {
         return (d < 10) ? '0' + d : d;
     }
 
-    const days = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
-
     function getUserTime(t = new Date()) {
 
         let Y = t.getFullYear();
-        let D = addLeadingZero(t.getDate());
-        let d = days[t.getMonth()];
+        let M = addLeadingZero(t.getMonth() + 1);
+        let D = addLeadingZero(t.getDate());    
         let h = addLeadingZero(t.getHours());
         let m = addLeadingZero(t.getMinutes());
 
 
-        return `${D} ${d} ${Y} о ${h}:${m}`;
+        return `${D}.${M}.${Y} о ${h}:${m}`;
     }
     return (
         <View style={styles.times}>
@@ -31,9 +30,9 @@ export default function Time() {
 const styles = StyleSheet.create({
     textPodCard: {
         fontFamily: 'ukraineregular',
-        fontSize: 11,
-        bottom: 100,
-        left: 65,
+        fontSize: moderateScale(11),
+        bottom: verticalScale(105),
+        left: horizontalScale(75),
         position: 'absolute'
     }
 });
