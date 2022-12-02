@@ -6,7 +6,7 @@ import Swiper from 'react-native-swiper';
 import * as Clipboard from 'expo-clipboard';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
-export default function Swipers({ Fam, Name, Otch, Date }) {
+export default function Swipers({ Fam, Name, Otch, Date, image }) {
 
     const copyText = async () => {
         Alert.alert('Номер скопійовано');
@@ -56,7 +56,9 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                     <Text style={styles.textCardNumberText}>123000000001</Text>
                 </View>
                 <View>
-                    <View style={styles.image}></View>
+                    <View style={styles.image}>
+                        {/* {image && <Image source={{ uri: image }} style={styles.image} />} */}
+                    </View>
                 </View>
                 <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
                 <View style={styles.CardLine}>
@@ -75,8 +77,8 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                 </View>
                 <View>
                     <Image style={styles.settings} source={{
-							uri: 'https://i.imgur.com/H5IqEW1.jpg',
-						}} />
+                        uri: 'https://i.imgur.com/H5IqEW1.jpg',
+                    }} />
                 </View>
             </View>
             <View testID="Beutiful" style={styles.cardPlatnik}>
@@ -112,7 +114,7 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                         <Text style={styles.textName2}>1234567890</Text>
                     </View>
                     <TouchableOpacity activeOpacity={1} onPress={copyText}>
-                        <Image style={styles.copyText} source={{uri: 'https://i.imgur.com/DwSw2Cf.jpg'}} />
+                        <Image style={styles.copyText} source={{ uri: 'https://i.imgur.com/DwSw2Cf.jpg' }} />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -139,7 +141,8 @@ export default function Swipers({ Fam, Name, Otch, Date }) {
                     <Text style={styles.textCardNumberText}>E2520C4F3889304</Text>
                 </View>
                 <View>
-                    <Image source={require('./../assets/photo.png')} style={styles.image} />
+                    {/* <Image source={require('./../assets/photo.png')} style={styles.image} /> */}
+                    {image && <Image source={{ uri: image }} style={styles.image} />}
                 </View>
                 <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
                 <View style={styles.CardLine33}>

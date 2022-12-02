@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, Text, View, Image, SafeAreaView, Touchable
 import Overlay from 'react-native-modal-overlay';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
-export default function Modal({ reFam }) {
+export default function Modal({ reFam, pickImage, image }) {
 
     const [modalVisible, SetModalVisible] = React.useState(false);
     const [Fam, onChangeFam] = React.useState('Дія');
@@ -19,7 +19,9 @@ export default function Modal({ reFam }) {
         <View>
             <Overlay visible={modalVisible} onClose={onClose} closeOnTouchOutside childrenWrapperStyle={{ backgroundColor: '#fff', borderRadius: 10 }} containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
                 <Text style={styles.settingsText}>Налаштування</Text>
+                {image && <Image source={{ uri: image }} style={styles.imagess} />}
                 <View>
+                    <Button title='Выбрать фото' onPress={pickImage} />
                     <Text style={styles.textSettings}>Редактировать фамилию</Text>
                     <TextInput style={styles.input} onChangeText={onChangeFam} value={Fam} placeholder="Фамилия" />
                     <Text style={styles.textSettings}>Редактировать имя</Text>
@@ -56,6 +58,13 @@ export default function Modal({ reFam }) {
 }
 
 const styles = StyleSheet.create({
+    imagess: {
+        width: 100,
+        height: 100,
+        borderColor: '#000',
+        marginBottom: 10,
+        borderWidth: 1
+    },
     textLogo: {
         position: 'absolute',
         bottom: 75,
