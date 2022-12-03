@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput, Alert } from 'react-native';
+import { Vibration, StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MarqueeText from 'react-native-marquee';
 import Swiper from 'react-native-swiper';
@@ -46,18 +46,18 @@ export default function Swipers({ Fam, Name, Otch, Date, image }) {
                     <Text style={styles.textDocument}>єДокумент</Text><Text style={styles.kaska}></Text>
                 </View>
                 <View style={styles.textCardData}>
-                    <Text style={styles.textCardDataText}>Дата народження:</Text>
+                    <Text style={styles.textCardDataText}>Дата</Text>
+                    <Text style={styles.textCardDataText}>народження:</Text>
                     <Text style={styles.textCardDataText}>{Date}</Text>
-                    <Text style={styles.textCardDataText}></Text>
                 </View>
                 <Text />
                 <View style={styles.textCardNumber}>
-                    <Text style={styles.textCardNumberText}>РНОКПП:</Text>
-                    <Text style={styles.textCardNumberText}>123000000001</Text>
+                    <Text style={styles.textCardNumberText22}>РНОКПП:</Text>
+                    <Text style={styles.textCardNumberText22}>123000000001</Text>
                 </View>
                 <View>
-                    <View style={styles.image}>
-                        {/* {image && <Image source={{ uri: image }} style={styles.image} />} */}
+                    <View>
+                        {<Image style={styles.image2} /> && <Image source={{ uri: image }} style={styles.image2} />}
                     </View>
                 </View>
                 <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
@@ -69,7 +69,7 @@ export default function Swipers({ Fam, Name, Otch, Date, image }) {
                     </View>
                 </View>
                 <View>
-                    <View style={styles.Name}>
+                    <View style={styles.Namesss}>
                         <Text style={styles.textName}>{Fam}</Text>
                         <Text style={styles.textName}>{Name}</Text>
                         <Text style={styles.textName}>{Otch}</Text>
@@ -110,7 +110,7 @@ export default function Swipers({ Fam, Name, Otch, Date, image }) {
                     </View>
                 </View>
                 <View>
-                    <View style={styles.Name}>
+                    <View style={styles.Namess}>
                         <Text style={styles.textName2}>1234567890</Text>
                     </View>
                     <TouchableOpacity activeOpacity={1} onPress={copyText}>
@@ -141,8 +141,7 @@ export default function Swipers({ Fam, Name, Otch, Date, image }) {
                     <Text style={styles.textCardNumberText}>E2520C4F3889304</Text>
                 </View>
                 <View>
-                    {/* <Image source={require('./../assets/photo.png')} style={styles.image} /> */}
-                    {image && <Image source={{ uri: image }} style={styles.image} />}
+                    {<Image style={styles.image} /> && <Image source={{ uri: image }} style={styles.image} />}
                 </View>
                 <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
                 <View style={styles.CardLine33}>
@@ -160,17 +159,21 @@ export default function Swipers({ Fam, Name, Otch, Date, image }) {
 }
 
 const styles = StyleSheet.create({
+    textCardNumberText22: {
+        fontFamily: 'ukraineregular',
+        fontSize: moderateScale(12)
+    },
     CardLine33: {
         borderBottomColor: '#ceebbf',
         borderBottomWidth: 2,
         width: horizontalScale(300),
-        bottom: verticalScale(50),
+        bottom: verticalScale(60),
         marginLeft: horizontalScale(15),
         borderRadius: 20
     },
     copyText: {
         position: 'absolute',
-        top: verticalScale(230),
+        top: verticalScale(250),
         left: horizontalScale(210),
         width: horizontalScale(33),
         height: verticalScale(33)
@@ -256,12 +259,24 @@ const styles = StyleSheet.create({
         shadowRadius: 6.49
     },
     image: {
-        marginTop: verticalScale(-15),
+        marginTop: verticalScale(-25),
         marginBottom: verticalScale(10),
-        width: horizontalScale(150),
-        height: verticalScale(200),
-        left: horizontalScale(20),
-        bottom: verticalScale(90)
+        width: horizontalScale(145),
+        height: verticalScale(220),
+        left: horizontalScale(21),
+        bottom: verticalScale(90),
+        borderColor: '#dbedd3',
+        borderWidth: 2,
+    },
+    image2: {
+        marginTop: verticalScale(-35),
+        marginBottom: verticalScale(10),
+        width: horizontalScale(145),
+        height: verticalScale(220),
+        left: horizontalScale(21),
+        bottom: verticalScale(90),
+        borderColor: '#b1c5e6',
+        borderWidth: 2,
     },
     textDocument: {
         marginTop: verticalScale(5),
@@ -312,7 +327,7 @@ const styles = StyleSheet.create({
     },
     textCardData: {
         top: verticalScale(-5),
-        left: horizontalScale(20),
+        left: horizontalScale(180),
     },
     textCardData333: {
         top: verticalScale(20),
@@ -339,8 +354,8 @@ const styles = StyleSheet.create({
         bottom: verticalScale(24)
     },
     textCardNumber: {
-        top: verticalScale(-25),
-        marginLeft: horizontalScale(20)
+        top: verticalScale(-15),
+        marginLeft: horizontalScale(180)
     },
     textCardNumber333: {
         top: verticalScale(5),
@@ -366,7 +381,14 @@ const styles = StyleSheet.create({
         bottom: verticalScale(85)
     },
     Name: {
-        marginTop: verticalScale(-35)
+        marginTop: verticalScale(-45),
+    },
+    Namesss: {
+        marginTop: verticalScale(-35),
+    },
+    Namess: {
+        marginTop: verticalScale(-45),
+        paddingTop: 5
     },
     textName: {
         marginTop: verticalScale(-3),
@@ -376,8 +398,8 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
     },
     textName2: {
-        marginTop: verticalScale(-20),
-        top: verticalScale(270),
+        top: verticalScale(290),
+        marginTop: -30,
         marginLeft: horizontalScale(15),
         fontSize: moderateScale(30),
         fontFamily: 'ukraineregular',
