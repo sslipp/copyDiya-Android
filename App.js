@@ -73,9 +73,4 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  card2: {
-    position: 'absolute',
-    top: 55,
-    left: 320,
-  },
 });
