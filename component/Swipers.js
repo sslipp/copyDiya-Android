@@ -334,7 +334,7 @@ const styles = StyleSheet.create({
         left: horizontalScale(185),
     },
     textCardData44: {
-        top: verticalScale(10),
+        top: verticalScale(5),
         left: horizontalScale(183),
     },
     textCardDataText: {
@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
         left: horizontalScale(185),
     },
     textCardNumber33: {
-        bottom: verticalScale(8),
+        bottom: verticalScale(10),
         left: horizontalScale(183)
     },
     textCardNumber22: {
