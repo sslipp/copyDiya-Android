@@ -55,7 +55,7 @@ export default class Slide extends Component {
                         <Swipers3 Fam={this.props.Fam} Name={this.props.Name} Otch={this.props.Otch} Date={this.props.Date} gender={this.props.gender} image={this.props.image} pickImage={this.props.pickImage} bgCol3={this.props.bgCol3} visibleElement3={this.props.visibleElement3} QrCode={this.props.QrCodeTwo} setQrCode={this.props.setQrCodeTwo} BarCode={this.props.BarCodeTwo} setBarCode={this.props.setBarCodeTwo} />
                     </View>
                 </CarouselPager>
-                <Dots length={3} active={this.state.active} paddingVertical={24.5} activeColor='#0A0603' passiveColor='rgba(0, 0, 0, 0.3)' passiveDotWidth={6} passiveDotHeight={6} activeDotHeight={8} activeDotWidth={8} />
+                <Dots length={3} active={this.state.active} paddingVertical={14.5} activeColor='#0A0603' passiveColor='rgba(0, 0, 0, 0.3)' passiveDotWidth={6} passiveDotHeight={6} activeDotHeight={8} activeDotWidth={8} />
             </View>
         );
     }

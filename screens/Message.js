@@ -5,6 +5,7 @@ import ButtonsMessage from '../component/ButtonsMessage';
 import { db } from '../firebase';
 import { useNavigation } from '@react-navigation/core';
 import { doc, getDoc } from 'firebase/firestore';
+import { horizontalScale, moderateScale, verticalScale } from '../component/Metrics';
 
 export default function Message() {
 
@@ -91,10 +92,10 @@ const styles = StyleSheet.create({
   },
   message: {
     backgroundColor: '#fff',
-    width: 350,
-    height: 100,
+    width: horizontalScale(350),
+    height: verticalScale(100),
     borderRadius: 10,
-    marginLeft: 13,
-    marginTop: 30
+    marginLeft: horizontalScale(13),
+    marginTop: verticalScale(30)
   },
 });

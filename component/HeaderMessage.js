@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     },
     textMessage: {
         fontFamily: 'ukraineregular',
-        marginTop: 48,
-        marginLeft: 90,
+        marginTop: verticalScale(55),
+        marginLeft: horizontalScale(80),
         position: 'absolute',
         fontSize: 18
     },

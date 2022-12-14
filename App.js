@@ -26,11 +26,11 @@ export default function App() {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Code"
           component={QrCode}
           options={{ headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name="Message"
           component={Message}

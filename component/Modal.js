@@ -102,55 +102,55 @@ const styles = StyleSheet.create({
     },
     menu: {
         left: horizontalScale(310),
-        top: 40,
-        width: 35,
+        top: 46,
+        width: 32,
         height: 23,
         position: 'absolute'
     },
     textN: {
         fontFamily: 'ukraineregular',
-        top: 67,
+        top: 74,
         fontSize: 10,
-        left: horizontalScale(310)
+        left: horizontalScale(308)
     },
     settings: {
-        width: horizontalScale(36),
+        width: horizontalScale(33),
         height: 33,
-        top: 40,
+        top: 53,
         left: horizontalScale(30),
         position: 'absolute'
     },
     textD: {
         fontFamily: 'ukraineregular',
         fontSize: 10,
-        top: 75,
+        top: 86,
         left: horizontalScale(18)
     },
     poslugy: {
         left: horizontalScale(119),
-        top: 70,
-        width: horizontalScale(40),
+        top: 84,
+        width: horizontalScale(35),
         height: verticalScale(33),
         position: 'absolute'
     },
     textP: {
         fontFamily: 'ukraineregular',
         fontSize: moderateScale(10),
-        top: 101,
-        left: horizontalScale(114)
+        top: 117,
+        left: horizontalScale(112)
     },
     message: {
         left: horizontalScale(220),
-        top: 58,
-        width: 33,
+        top: 71,
+        width: 31,
         height: 32,
         position: 'absolute'
     },
     textM: {
         fontFamily: 'ukraineregular',
-        top: 90,
+        top: 103,
         fontSize: moderateScale(10),
-        left: horizontalScale(195)
+        left: horizontalScale(193)
     },
     settingsText: {
         fontFamily: 'ukraineregular',
