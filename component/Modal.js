@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, TextInput } from 'react-native';
 import Overlay from 'react-native-modal-overlay';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
-import { useNavigation } from '@react-navigation/core';
 
 export default function Modal({ reFam, pickImage, image }) {
 
@@ -88,7 +87,8 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     buttons: {
-        bottom: verticalScale(90)
+        bottom: verticalScale(90),
+        marginLeft: horizontalScale(5)
     },
     buttons2: {
         top: 24,

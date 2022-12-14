@@ -131,12 +131,12 @@ export default class Swipers3 extends Component {
                                         this.props.setQrCode(true)
                                         this.props.setBarCode(false)
                                     }}>
-                                        <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtnTwo.png')} />
-                                        <Text style={styles.qrCodeText}>QR-код</Text>
+                                        <Image style={styles.qrCodeBtnTwo} source={require('./../assets/qrCodeBtnTwo.png')} />
+                                        <Text style={styles.qrCodeTextTwo}>QR-код</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity activeOpacity={1}>
-                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwo.png')} />
-                                        <Text style={styles.barCodeText}>Штрихкод</Text>
+                                        <Image style={styles.barCodeBtnTwo} source={require('./../assets/barCodeBtnTwo.png')} />
+                                        <Text style={styles.barCodeTextTwo}>Штрихкод</Text>
                                     </TouchableOpacity>
                                 </View>
                             }
@@ -153,83 +153,111 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
         fontSize: moderateScale(12)
     },
+    qrCodeBtnTwo: {
+        position: 'absolute',
+        width: horizontalScale(63),
+        height: verticalScale(63),
+        marginLeft: horizontalScale(63),
+        marginTop: verticalScale(328)
+    },
+    barCodeBtnTwo: {
+        position: 'absolute',
+        width: horizontalScale(53),
+        height: verticalScale(53),
+        marginLeft: horizontalScale(180),
+        marginTop: verticalScale(335)
+    },
+    barCodeTextTwo: {
+        position: 'absolute',
+        marginTop: verticalScale(392),
+        marginLeft: horizontalScale(168),
+        fontSize: 13,
+        fontFamily: 'ukraineregular'
+    },
+    qrCodeTextTwo: {
+        position: 'absolute',
+        marginTop: verticalScale(392),
+        marginLeft: horizontalScale(70.5),
+        fontSize: 13,
+        fontFamily: 'ukraineregular'
+    },
     barCodeTxt: {
         position: 'absolute',
-        marginTop: 225,
-        fontSize: 15,
-        marginLeft: 95,
+        marginTop: verticalScale(240),
+        fontSize: moderateScale(15),
+        marginLeft: horizontalScale(95),
         fontFamily: 'ukraineregular'
     },
     textBareCodeReplace: {
         color: '#888',
         fontSize: 10,
         fontFamily: 'ukrainelight',
-        marginTop: 28,
-        marginLeft: 37
+        marginTop: verticalScale(28),
+        marginLeft: horizontalScale(37)
     },
     textBareCode: {
         color: '#888',
         fontSize: 10,
         position: 'absolute',
         fontFamily: 'ukrainelight',
-        marginTop: 80,
-        marginLeft: 37
+        marginTop: verticalScale(100),
+        marginLeft: horizontalScale(28)
     },
     imageBarCode: {
         position: 'absolute',
-        width: 270,
-        height: 80,
-        marginLeft: 23,
-        marginTop: 120
+        width: horizontalScale(300),
+        height: verticalScale(100),
+        marginLeft: horizontalScale(12.5),
+        marginTop: verticalScale(130)
     },
     barCodeText: {
         position: 'absolute',
-        marginTop: 341,
-        marginLeft: 168.5,
+        marginTop: verticalScale(390),
+        marginLeft: horizontalScale(168),
         fontSize: 13,
         fontFamily: 'ukraineregular'
     },
     qrCodeText: {
         position: 'absolute',
-        marginTop: 340,
-        marginLeft: 71,
+        marginTop: verticalScale(390),
+        marginLeft: horizontalScale(70.5),
         fontSize: 13,
         fontFamily: 'ukraineregular'
     },
     imageQRCode: {
         position: 'absolute',
-        width: 300,
-        height: 300,
-        right: 4,
-        top: 30
+        width: horizontalScale(300),
+        height: verticalScale(300),
+        marginLeft: horizontalScale(11),
+        marginTop: verticalScale(45)
     },
     qrCodeBtn: {
         position: 'absolute',
-        width: 63,
-        height: 63,
-        marginLeft: 65,
-        marginTop: 277
+        width: horizontalScale(63),
+        height: verticalScale(63),
+        marginLeft: horizontalScale(65),
+        marginTop: verticalScale(325)
     },
     barCodeBtn: {
         position: 'absolute',
-        width: 53,
-        height: 53,
-        marginLeft: 180,
-        marginTop: 287
+        width: horizontalScale(53),
+        height: verticalScale(53),
+        marginLeft: horizontalScale(180),
+        marginTop: verticalScale(335)
     },
     textQR: {
         color: '#888',
         fontSize: 10,
         fontFamily: 'ukrainelight',
-        marginTop: 30,
-        marginLeft: 37
+        marginTop: verticalScale(30),
+        marginLeft: horizontalScale(37)
     },
     CardLine33: {
         borderBottomColor: '#ceebbf',
         borderBottomWidth: 2,
         width: horizontalScale(290),
         bottom: verticalScale(55),
-        marginLeft: horizontalScale(10),
+        marginLeft: horizontalScale(15),
         borderRadius: 20
     },
     copyText: {
@@ -381,7 +409,7 @@ const styles = StyleSheet.create({
         left: horizontalScale(185),
     },
     textCardData44: {
-        top: verticalScale(5),
+        top: verticalScale(7),
         left: horizontalScale(176),
     },
     textCardDataText: {

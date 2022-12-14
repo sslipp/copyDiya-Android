@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native'
 import HeaderLogin from '../component/HeaderLogin';
 import { auth } from '../firebase';
-import * as Linking from 'expo-linking';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
@@ -28,10 +27,6 @@ const LoginScreen = () => {
                 const user = userCredentials.user;
             })
             .catch(error => Alert.alert("Error!", "Wrong login or password!"))
-    }
-
-    const buy = () => {
-        Linking.openURL('https://t.me/');
     }
 
     return (
@@ -63,14 +58,6 @@ const LoginScreen = () => {
                         <Text style={styles.buttonText}>Login</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
-            <View style={styles.buttonsBuy}>
-                <TouchableOpacity
-                    onPress={buy}
-                    style={styles.buttonBuy}
-                >
-                    <Text style={styles.buttonTextBuy}>Купить фейк дію</Text>
-                </TouchableOpacity>
             </View>
         </View>
     )
