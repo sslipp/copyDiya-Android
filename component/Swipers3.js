@@ -1,10 +1,11 @@
-import React, { useEffect, useState, Component } from 'react'
+import React, { useState, Component } from 'react';
 import { Vibration, StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MarqueeText from 'react-native-marquee';
+import * as Clipboard from 'expo-clipboard';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
-export default class Swipers extends Component {
+export default class Swipers3 extends Component {
     UNSAFE_componentWillMount() {
         this.animatedValue = new Animated.Value(0);
         this.value = 0;
@@ -61,55 +62,103 @@ export default class Swipers extends Component {
         return (
             <View>
                 <Animated.View style={[frontAnimatedStyle, { opacity: this.frontOpacity }]}>
-                    <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card, { backgroundColor: this.props.bgCol2 }]} >
+                    <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card4, { backgroundColor: this.props.bgCol3 }]} >
                         <Text></Text>
-                        <View>
-                            <Text style={styles.textDocument}>єДокумент</Text><Text style={styles.kaska}></Text>
-                        </View>
-                        <View style={styles.textCardData}>
-                            <Text style={styles.textCardDataText}>Дата</Text>
-                            <Text style={styles.textCardDataText}>народження:</Text>
-                            <Text style={styles.textCardDataText}>{this.props.Date}</Text>
-                        </View>
-                        <Text />
-                        <View style={styles.textCardNumber}>
-                            <Text style={styles.textCardNumberText22}>РНОКПП:</Text>
-                            <Text style={styles.textCardNumberText22}>123000000001</Text>
-                        </View>
-                        <View>
+                        {this.props.visibleElement3 &&
                             <View>
-                                {<Image style={styles.image2} /> && <Image source={{ uri: this.props.image }} style={styles.image2} />}
-                            </View>
-                        </View>
-                        <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
-                        {this.props.visibleElement &&
-                            <View style={styles.CardLine}>
-                                <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#668afc', '#a9fce8']} style={styles.gradient}>
-                                </LinearGradient>
-                                <View style={styles.marqText}>
-                                    <MarqueeText speed={0.1} marqueeOnStart={true} loop={true} delay={500} style={styles.textCardLine}>Документ діє у військовий час. Ой у лузі червона калина похилилася, чогось наша славна Україна зажурилася. А ми тую червону калину підіймемо, а ми нашу славну Україну, гей, гей, розвеселимо.</MarqueeText>
-                                </View>
+                                <Text style={styles.textDocument4}>Внутрішній</Text><Text style={styles.textDocument5}>COVID19-сертифікат</Text>
                             </View>
                         }
-                        <View>
-                            <View style={styles.Namesss}>
-                                <Text style={styles.textName}>{this.props.Fam}</Text>
-                                <Text style={styles.textName}>{this.props.Name}</Text>
-                                <Text style={styles.textName}>{this.props.Otch}</Text>
+                        {this.props.visibleElement3 &&
+                            <View style={styles.textCardData44}>
+                                <Text style={styles.textCardDataText}>Дата</Text>
+                                <Text style={styles.textCardDataText}>народження:</Text>
+                                <Text style={styles.textCardDataText}>{this.props.Date}</Text>
                             </View>
-                        </View>
-                        {this.props.visibleElement &&
+                        }
+                        <Text />
+                        {this.props.visibleElement3 &&
+                            <View style={styles.textCardNumber33}>
+                                <Text style={styles.textCardNumberText}>Дійсний до:</Text>
+                                <Text style={styles.textCardNumberText}>24.06.2023</Text>
+                            </View>
+                        }
+                        {this.props.visibleElement3 &&
+                            <View style={styles.textCardNumber22}>
+                                <Text style={styles.textCardNumberText}>Номер</Text>
+                                <Text style={styles.textCardNumberText}>сертифікату:</Text>
+                                <Text style={styles.textCardNumberText}>URN:UVCI:01:UA:0</Text>
+                                <Text style={styles.textCardNumberText}>E556693061955589</Text>
+                                <Text style={styles.textCardNumberText}>E2520C4F3889304</Text>
+                            </View>
+                        }
+                        {this.props.visibleElement3 &&
                             <View>
-                                <Image style={styles.settings} source={{
-                                    uri: 'https://i.imgur.com/H5IqEW1.jpg',
-                                }} />
+                                {<Image style={styles.image} /> && <Image source={{ uri: this.props.image }} style={styles.image} />}
+                            </View>
+                        }
+                        <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
+                        {this.props.visibleElement3 &&
+                            <View style={styles.CardLine33}>
+                            </View>
+                        }
+                        {this.props.visibleElement3 &&
+                            <View>
+                                <View style={styles.Name}>
+                                    <Text style={styles.textName}>{this.props.Fam}</Text>
+                                    <Text style={styles.textName}>{this.props.Name}</Text>
+                                    <Text style={styles.textName}>{this.props.Otch}</Text>
+                                </View>
                             </View>
                         }
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={[styles.cardBack, backAnimatedStyle, { opacity: this.backOpacity }]}>
-                    <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card, { backgroundColor: this.props.bgCol2 }]} >
-                        <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
+                    <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card4, { backgroundColor: this.props.bgCol3 }]} >
+                        {this.props.visibleElement3 &&
+                            <View>
+                                {this.props.QrCode &&
+                                    <View>
+                                        <Text style={styles.textQR}>QR-КОД ДІЯТИМЕ 3 ХВ</Text>
+                                        <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
+                                        <TouchableOpacity activeOpacity={1}>
+                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
+                                            <Text style={styles.qrCodeText}>QR-код</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity activeOpacity={1} onPress={() => {
+                                            this.props.setQrCode(false)
+                                            this.props.setBarCode(true)
+                                        }}>
+                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtn.png')} />
+                                            <Text style={styles.barCodeText}>Штрихкод</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                }
+                            </View>
+                        }
+                        {this.props.visibleElement3 &&
+                            <View>
+                                {this.props.BarCode &&
+                                    <View>
+                                        <Text style={styles.textBareCodeReplace}></Text>
+                                        <Text style={styles.textBareCode}>ШТРИХКОД ДІЯТИМЕ 3 ХВ</Text>
+                                        <Image style={styles.imageBarCode} source={require('./../assets/barcode.png')} />
+                                        <Text style={styles.barCodeTxt}>1234567890123</Text>
+                                        <TouchableOpacity activeOpacity={1} onPress={() => {
+                                            this.props.setQrCode(true)
+                                            this.props.setBarCode(false)
+                                        }}>
+                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtnTwo.png')} />
+                                            <Text style={styles.qrCodeText}>QR-код</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity activeOpacity={1}>
+                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwo.png')} />
+                                            <Text style={styles.barCodeText}>Штрихкод</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                }
+                            </View>
+                        }
                     </TouchableOpacity>
                 </Animated.View>
             </View>
@@ -120,21 +169,85 @@ export default class Swipers extends Component {
 const styles = StyleSheet.create({
     textCardNumberText22: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(11)
+        fontSize: moderateScale(12)
+    },
+    barCodeTxt: {
+        position: 'absolute',
+        marginTop: 225,
+        fontSize: 15,
+        marginLeft: 95,
+        fontFamily: 'ukraineregular'
+    },
+    textBareCodeReplace: {
+        color: '#888',
+        fontSize: 10,
+        fontFamily: 'ukrainelight',
+        marginTop: 28,
+        marginLeft: 37
+    },
+    textBareCode: {
+        color: '#888',
+        fontSize: 10,
+        position: 'absolute',
+        fontFamily: 'ukrainelight',
+        marginTop: 80,
+        marginLeft: 37
+    },
+    imageBarCode: {
+        position: 'absolute',
+        width: 270,
+        height: 80,
+        marginLeft: 23,
+        marginTop: 120
+    },
+    barCodeText: {
+        position: 'absolute',
+        marginTop: 341,
+        marginLeft: 168.5,
+        fontSize: 13,
+        fontFamily: 'ukraineregular'
+    },
+    qrCodeText: {
+        position: 'absolute',
+        marginTop: 340,
+        marginLeft: 71,
+        fontSize: 13,
+        fontFamily: 'ukraineregular'
     },
     imageQRCode: {
         position: 'absolute',
         width: 300,
         height: 300,
         right: 4,
-        top: 65
+        top: 30
+    },
+    qrCodeBtn: {
+        position: 'absolute',
+        width: 63,
+        height: 63,
+        marginLeft: 65,
+        marginTop: 277
+    },
+    barCodeBtn: {
+        position: 'absolute',
+        width: 53,
+        height: 53,
+        marginLeft: 180,
+        marginTop: 287
+    },
+    textQR: {
+        color: '#888',
+        fontSize: 10,
+        fontFamily: 'ukrainelight',
+        marginTop: 30,
+        marginLeft: 37
     },
     CardLine33: {
         borderBottomColor: '#ceebbf',
         borderBottomWidth: 2,
-        width: horizontalScale(300),
+        width: horizontalScale(290),
         bottom: verticalScale(55),
-        marginLeft: horizontalScale(15),
+        marginLeft: horizontalScale(10),
         borderRadius: 20
     },
     copyText: {
@@ -177,11 +290,12 @@ const styles = StyleSheet.create({
         elevation: 15,
     },
     card: {
-        width: horizontalScale(320),
-        height: verticalScale(480),
+        backgroundColor: '#fef495',
+        width: horizontalScale(330),
+        height: verticalScale(500),
         borderRadius: 10,
-        marginLeft: horizontalScale(0),
-        marginTop: verticalScale(70),
+        marginLeft: horizontalScale(24),
+        marginTop: verticalScale(50),
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -192,11 +306,10 @@ const styles = StyleSheet.create({
         elevation: 15,
     },
     card4: {
-        backgroundColor: '#e9f5e7',
-        width: horizontalScale(330),
+        width: horizontalScale(310),
         height: verticalScale(500),
         borderRadius: 10,
-        marginLeft: horizontalScale(24),
+        marginLeft: horizontalScale(8),
         marginTop: verticalScale(50),
         shadowColor: "#000",
         shadowOffset: {
@@ -223,8 +336,8 @@ const styles = StyleSheet.create({
     image2: {
         marginTop: verticalScale(-20),
         marginBottom: verticalScale(10),
-        width: horizontalScale(135),
-        height: verticalScale(190),
+        width: horizontalScale(145),
+        height: verticalScale(220),
         left: horizontalScale(21),
         bottom: verticalScale(90),
         borderColor: '#b1c5e6',
@@ -234,7 +347,7 @@ const styles = StyleSheet.create({
         marginTop: verticalScale(5),
         marginBottom: verticalScale(28),
         marginLeft: horizontalScale(20),
-        fontSize: moderateScale(18),
+        fontSize: moderateScale(20),
         fontFamily: 'ukraineregular',
     },
     textDocument4: {
@@ -260,7 +373,7 @@ const styles = StyleSheet.create({
         padding: verticalScale(18)
     },
     CardLine: {
-        width: horizontalScale(320),
+        width: horizontalScale(330),
         height: verticalScale(25),
         bottom: verticalScale(60),
     },
@@ -278,8 +391,8 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     textCardData: {
-        top: verticalScale(-1),
-        left: horizontalScale(172),
+        top: verticalScale(-5),
+        left: horizontalScale(180),
     },
     textCardData333: {
         top: verticalScale(20),
@@ -287,11 +400,11 @@ const styles = StyleSheet.create({
     },
     textCardData44: {
         top: verticalScale(5),
-        left: horizontalScale(183),
+        left: horizontalScale(176),
     },
     textCardDataText: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(11)
+        fontSize: moderateScale(12)
     },
     textCardDataText2: {
         fontFamily: 'ukraineregular',
@@ -306,20 +419,20 @@ const styles = StyleSheet.create({
         bottom: verticalScale(24)
     },
     textCardNumber: {
-        top: verticalScale(-8),
-        marginLeft: horizontalScale(172)
+        top: verticalScale(-15),
+        marginLeft: horizontalScale(180)
     },
     textCardNumber333: {
         top: verticalScale(5),
         left: horizontalScale(185),
     },
     textCardNumber33: {
-        bottom: verticalScale(10),
-        left: horizontalScale(183)
+        bottom: verticalScale(5),
+        left: horizontalScale(176)
     },
     textCardNumber22: {
-        top: verticalScale(225),
-        left: horizontalScale(183),
+        top: verticalScale(220),
+        left: horizontalScale(176),
         position: 'absolute'
     },
     textCardNumberText: {
@@ -336,7 +449,7 @@ const styles = StyleSheet.create({
         marginTop: verticalScale(-35),
     },
     Namesss: {
-        marginTop: verticalScale(-30),
+        marginTop: verticalScale(-35),
     },
     Namess: {
         marginTop: verticalScale(-25)
@@ -379,7 +492,7 @@ const styles = StyleSheet.create({
         width: horizontalScale(45),
         height: verticalScale(45),
         position: 'absolute',
-        left: horizontalScale(257),
+        left: horizontalScale(275),
         top: -35
     },
     textN: {

@@ -12,20 +12,29 @@ export default function Header() {
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <View>
                 <Image source={require('./../assets/icon.png')} style={styles.image} />
+                <Text style={styles.textMessage}>Повідомлення</Text>
             </View>
-            <TouchableOpacity activeOpacity={1} onPress={repl}>
-                <Image source={require('./../assets/qrcode.png')} style={styles.image2} />
-            </TouchableOpacity>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#C6D9E8',
+        paddingBottom: 20
+    },
+    textMessage: {
+        fontFamily: 'ukraineregular',
+        marginTop: 48,
+        marginLeft: 90,
+        position: 'absolute',
+        fontSize: 18
+    },
     image: {
-        marginTop: verticalScale(50),
+        marginTop: verticalScale(40),
         marginLeft: horizontalScale(25),
         width: 50,
         height: 50,
