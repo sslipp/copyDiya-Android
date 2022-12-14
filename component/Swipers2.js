@@ -69,32 +69,24 @@ export default class Swipers2 extends Component {
                 <Animated.View style={[frontAnimatedStyle, { opacity: this.frontOpacity }]}>
                     <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.cardPlatnik, { backgroundColor: this.props.bgCol1 }]}>
                         <Text></Text>
-                        {this.props.visibleElement2 &&
-                            <View>
-                                <Text style={styles.textKarta}>Карта платника</Text><Text style={styles.podatki}>податків</Text>
+                        <View>
+                            <Text style={styles.textKarta}>Карта платника</Text><Text style={styles.podatki}>податків</Text>
+                        </View>
+                        <View>
+                            <View style={styles.Name}>
+                                <Text style={styles.textName3}>{this.props.Fam}</Text>
+                                <Text style={styles.textName3}>{this.props.Name}</Text>
+                                <Text style={styles.textName3}>{this.props.Otch}</Text>
                             </View>
-                        }
-                        {this.props.visibleElement2 &&
-                            <View>
-                                <View style={styles.Name}>
-                                    <Text style={styles.textName3}>{this.props.Fam}</Text>
-                                    <Text style={styles.textName3}>{this.props.Name}</Text>
-                                    <Text style={styles.textName3}>{this.props.Otch}</Text>
-                                </View>
-                            </View>
-                        }
-                        {this.props.visibleElement2 &&
-                            <View style={styles.textCardData333}>
-                                <Text style={styles.textCardDataText2}>Дата народження:</Text>
-                                <Text style={styles.textCardDataText2}>{this.props.Date}</Text>
-                            </View>
-                        }
+                        </View>
+                        <View style={styles.textCardData333}>
+                            <Text style={styles.textCardDataText2}>Дата народження:</Text>
+                            <Text style={styles.textCardDataText2}>{this.props.Date}</Text>
+                        </View>
                         <Text />
-                        {this.props.visibleElement2 &&
-                            <View style={styles.textCardNumber333}>
-                                <Text style={styles.textCardNumberText2}>РНОКПП</Text>
-                            </View>
-                        }
+                        <View style={styles.textCardNumber333}>
+                            <Text style={styles.textCardNumberText2}>РНОКПП</Text>
+                        </View>
                         <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
                         {this.props.visibleElement2 &&
                             <View style={styles.CardLine2}>
@@ -105,64 +97,60 @@ export default class Swipers2 extends Component {
                                 </View>
                             </View>
                         }
-                        {this.props.visibleElement2 &&
-                            <View>
-                                <View style={styles.Namess}>
-                                    <Text style={styles.textName2}>1234567890</Text>
-                                </View>
+                        <View>
+                            <View style={styles.Namess}>
+                                <Text style={styles.textName2}>1234567890</Text>
+                            </View>
+                            {this.props.visibleElement2 &&
                                 <TouchableOpacity activeOpacity={1} onPress={copyText}>
                                     <Image style={styles.copyText} source={{ uri: 'https://i.imgur.com/DwSw2Cf.jpg' }} />
                                 </TouchableOpacity>
-                            </View>
-                        }
+                            }
+                        </View>
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={[styles.cardBack, backAnimatedStyle, { opacity: this.backOpacity }]}>
                     <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.cardPlatnik, { backgroundColor: this.props.bgCol1 }]} >
-                        {this.props.visibleElement2 &&
-                            <View>
-                                {this.props.QrCode &&
-                                    <View>
-                                        <Text style={styles.textQR}>QR-КОД ДІЯТИМЕ 3 ХВ</Text>
-                                        <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
-                                        <TouchableOpacity activeOpacity={1}>
-                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
-                                            <Text style={styles.qrCodeText}>QR-код</Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity activeOpacity={1} onPress={() => {
-                                            this.props.setQrCode(false)
-                                            this.props.setBarCode(true)
-                                        }}>
-                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtn.png')} />
-                                            <Text style={styles.barCodeText}>Штрихкод</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                }
-                            </View>
-                        }
-                        {this.props.visibleElement2 &&
-                            <View>
-                                {this.props.BarCode &&
-                                    <View>
-                                        <Text style={styles.textBareCodeReplace}></Text>
-                                        <Text style={styles.textBareCode}>ШТРИХКОД ДІЯТИМЕ 3 ХВ</Text>
-                                        <Image style={styles.imageBarCode} source={require('./../assets/barcode.png')} />
-                                        <Text style={styles.barCodeTxt}>1234567890123</Text>
-                                        <TouchableOpacity activeOpacity={1} onPress={() => {
-                                            this.props.setQrCode(true)
-                                            this.props.setBarCode(false)
-                                        }}>
-                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtnTwo.png')} />
-                                            <Text style={styles.qrCodeText}>QR-код</Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity activeOpacity={1}>
-                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwo.png')} />
-                                            <Text style={styles.barCodeText}>Штрихкод</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                }
-                            </View>
-                        }
+                        <View>
+                            {this.props.QrCode &&
+                                <View>
+                                    <Text style={styles.textQR}>QR-КОД ДІЯТИМЕ 3 ХВ</Text>
+                                    <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
+                                    <TouchableOpacity activeOpacity={1}>
+                                        <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
+                                        <Text style={styles.qrCodeText}>QR-код</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity activeOpacity={1} onPress={() => {
+                                        this.props.setQrCode(false)
+                                        this.props.setBarCode(true)
+                                    }}>
+                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtn.png')} />
+                                        <Text style={styles.barCodeText}>Штрихкод</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            }
+                        </View>
+                        <View>
+                            {this.props.BarCode &&
+                                <View>
+                                    <Text style={styles.textBareCodeReplace}></Text>
+                                    <Text style={styles.textBareCode}>ШТРИХКОД ДІЯТИМЕ 3 ХВ</Text>
+                                    <Image style={styles.imageBarCode} source={require('./../assets/barcode.png')} />
+                                    <Text style={styles.barCodeTxt}>1234567890123</Text>
+                                    <TouchableOpacity activeOpacity={1} onPress={() => {
+                                        this.props.setQrCode(true)
+                                        this.props.setBarCode(false)
+                                    }}>
+                                        <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtnTwo.png')} />
+                                        <Text style={styles.qrCodeText}>QR-код</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity activeOpacity={1}>
+                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwo.png')} />
+                                        <Text style={styles.barCodeText}>Штрихкод</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            }
+                        </View>
                     </TouchableOpacity>
                 </Animated.View>
             </View>
@@ -256,20 +244,20 @@ const styles = StyleSheet.create({
     },
     copyText: {
         position: 'absolute',
-        top: verticalScale(253),
-        left: horizontalScale(205),
+        top: verticalScale(252),
+        left: horizontalScale(195),
         width: horizontalScale(33),
         height: verticalScale(33)
     },
     podatki: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(22),
-        marginLeft: horizontalScale(10)
+        fontSize: moderateScale(20),
+        marginLeft: horizontalScale(15)
     },
     textKarta: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(22),
-        marginLeft: horizontalScale(10),
+        fontSize: moderateScale(20),
+        marginLeft: horizontalScale(15),
         marginTop: verticalScale(10)
     },
     wrapper: {},
@@ -278,11 +266,11 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     cardPlatnik: {
-        width: horizontalScale(310),
-        height: verticalScale(500),
+        width: horizontalScale(320),
+        height: verticalScale(480),
         borderRadius: 10,
-        marginLeft: horizontalScale(5),
-        marginTop: verticalScale(50),
+        marginLeft: horizontalScale(0),
+        marginTop: verticalScale(70),
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -389,7 +377,7 @@ const styles = StyleSheet.create({
         padding: verticalScale(15)
     },
     CardLine2: {
-        width: horizontalScale(310),
+        width: horizontalScale(320),
         height: verticalScale(25),
         marginTop: verticalScale(360),
         position: 'absolute'
@@ -400,7 +388,7 @@ const styles = StyleSheet.create({
     },
     textCardData333: {
         top: verticalScale(20),
-        left: horizontalScale(185),
+        left: horizontalScale(187),
     },
     textCardData44: {
         top: verticalScale(5),
@@ -412,9 +400,9 @@ const styles = StyleSheet.create({
     },
     textCardDataText2: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(12),
-        top: verticalScale(100),
-        right: horizontalScale(171)
+        fontSize: moderateScale(11),
+        top: verticalScale(80),
+        right: horizontalScale(169.5)
     },
     marqText: {
         bottom: verticalScale(24)
@@ -428,7 +416,7 @@ const styles = StyleSheet.create({
     },
     textCardNumber333: {
         top: verticalScale(5),
-        left: horizontalScale(185),
+        left: horizontalScale(186.5),
     },
     textCardNumber33: {
         bottom: verticalScale(10),
@@ -445,18 +433,19 @@ const styles = StyleSheet.create({
     },
     textCardNumberText2: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(13),
-        right: horizontalScale(173),
-        bottom: verticalScale(85)
+        fontSize: moderateScale(11),
+        right: horizontalScale(171),
+        bottom: verticalScale(80)
     },
     Name: {
         marginTop: verticalScale(-35),
+        marginLeft: horizontalScale(3.5)
     },
     Namesss: {
         marginTop: verticalScale(-35),
     },
     Namess: {
-        marginTop: verticalScale(-25)
+        marginTop: verticalScale(-28)
     },
     textName: {
         marginTop: verticalScale(-3),
@@ -467,17 +456,17 @@ const styles = StyleSheet.create({
     },
     textName2: {
         top: verticalScale(290),
-        marginTop: -30,
-        marginLeft: horizontalScale(15),
-        fontSize: moderateScale(30),
+        marginTop: -35,
+        marginLeft: horizontalScale(16),
+        fontSize: moderateScale(26),
         fontFamily: 'ukraineregular',
     },
     textName3: {
         padding: 1,
         marginTop: verticalScale(-5),
-        top: verticalScale(100),
+        top: verticalScale(90),
         marginLeft: horizontalScale(12),
-        fontSize: moderateScale(16),
+        fontSize: moderateScale(15),
         fontFamily: 'ukraineregular',
     },
     kaska: {

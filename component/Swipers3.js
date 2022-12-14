@@ -1,8 +1,6 @@
 import React, { useState, Component } from 'react';
 import { Vibration, StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Animated, AppRegistry, TextInput, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import MarqueeText from 'react-native-marquee';
-import * as Clipboard from 'expo-clipboard';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
 export default class Swipers3 extends Component {
@@ -64,101 +62,85 @@ export default class Swipers3 extends Component {
                 <Animated.View style={[frontAnimatedStyle, { opacity: this.frontOpacity }]}>
                     <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card4, { backgroundColor: this.props.bgCol3 }]} >
                         <Text></Text>
-                        {this.props.visibleElement3 &&
-                            <View>
-                                <Text style={styles.textDocument4}>Внутрішній</Text><Text style={styles.textDocument5}>COVID19-сертифікат</Text>
-                            </View>
-                        }
-                        {this.props.visibleElement3 &&
-                            <View style={styles.textCardData44}>
-                                <Text style={styles.textCardDataText}>Дата</Text>
-                                <Text style={styles.textCardDataText}>народження:</Text>
-                                <Text style={styles.textCardDataText}>{this.props.Date}</Text>
-                            </View>
-                        }
+                        <View>
+                            <Text style={styles.textDocument4}>Внутрішній</Text><Text style={styles.textDocument5}>COVID19-сертифікат</Text>
+                        </View>
+                        <View style={styles.textCardData44}>
+                            <Text style={styles.textCardDataText}>Дата</Text>
+                            <Text style={styles.textCardDataText}>народження:</Text>
+                            <Text style={styles.textCardDataText}>{this.props.Date}</Text>
+                        </View>
                         <Text />
-                        {this.props.visibleElement3 &&
-                            <View style={styles.textCardNumber33}>
-                                <Text style={styles.textCardNumberText}>Дійсний до:</Text>
-                                <Text style={styles.textCardNumberText}>24.06.2023</Text>
-                            </View>
-                        }
-                        {this.props.visibleElement3 &&
-                            <View style={styles.textCardNumber22}>
-                                <Text style={styles.textCardNumberText}>Номер</Text>
-                                <Text style={styles.textCardNumberText}>сертифікату:</Text>
-                                <Text style={styles.textCardNumberText}>URN:UVCI:01:UA:0</Text>
-                                <Text style={styles.textCardNumberText}>E556693061955589</Text>
-                                <Text style={styles.textCardNumberText}>E2520C4F3889304</Text>
-                            </View>
-                        }
-                        {this.props.visibleElement3 &&
-                            <View>
-                                {<Image style={styles.image} /> && <Image source={{ uri: this.props.image }} style={styles.image} />}
-                            </View>
-                        }
+                        <View style={styles.textCardNumber33}>
+                            <Text style={styles.textCardNumberText}>Дійсний до:</Text>
+                            <Text style={styles.textCardNumberText}>24.06.2023</Text>
+                        </View>
+                        <View style={styles.textCardNumber22}>
+                            <Text style={styles.textCardNumberText}>Номер</Text>
+                            <Text style={styles.textCardNumberText}>сертифікату:</Text>
+                            <Text style={styles.textCardNumberText}>URN:UVCI:01:UA:0</Text>
+                            <Text style={styles.textCardNumberText}>E556693061955589</Text>
+                            <Text style={styles.textCardNumberText}>E2520C4F3889304</Text>
+                        </View>
+                        <View>
+                            {<Image style={styles.image} /> && <Image source={{ uri: this.props.image }} style={styles.image} />}
+                        </View>
                         <LinearGradient colors={['#FFFFFF00', '#FFFFFF']}></LinearGradient>
                         {this.props.visibleElement3 &&
                             <View style={styles.CardLine33}>
                             </View>
                         }
-                        {this.props.visibleElement3 &&
-                            <View>
-                                <View style={styles.Name}>
-                                    <Text style={styles.textName}>{this.props.Fam}</Text>
-                                    <Text style={styles.textName}>{this.props.Name}</Text>
-                                    <Text style={styles.textName}>{this.props.Otch}</Text>
-                                </View>
+                        <View>
+                            <View style={styles.Name}>
+                                <Text style={styles.textName}>{this.props.Fam}</Text>
+                                <Text style={styles.textName}>{this.props.Name}</Text>
+                                <Text style={styles.textName}>{this.props.Otch}</Text>
                             </View>
-                        }
+                        </View>
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={[styles.cardBack, backAnimatedStyle, { opacity: this.backOpacity }]}>
                     <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card4, { backgroundColor: this.props.bgCol3 }]} >
-                        {this.props.visibleElement3 &&
-                            <View>
-                                {this.props.QrCode &&
-                                    <View>
-                                        <Text style={styles.textQR}>QR-КОД ДІЯТИМЕ 3 ХВ</Text>
-                                        <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
-                                        <TouchableOpacity activeOpacity={1}>
-                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
-                                            <Text style={styles.qrCodeText}>QR-код</Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity activeOpacity={1} onPress={() => {
-                                            this.props.setQrCode(false)
-                                            this.props.setBarCode(true)
-                                        }}>
-                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtn.png')} />
-                                            <Text style={styles.barCodeText}>Штрихкод</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                }
-                            </View>
-                        }
-                        {this.props.visibleElement3 &&
-                            <View>
-                                {this.props.BarCode &&
-                                    <View>
-                                        <Text style={styles.textBareCodeReplace}></Text>
-                                        <Text style={styles.textBareCode}>ШТРИХКОД ДІЯТИМЕ 3 ХВ</Text>
-                                        <Image style={styles.imageBarCode} source={require('./../assets/barcode.png')} />
-                                        <Text style={styles.barCodeTxt}>1234567890123</Text>
-                                        <TouchableOpacity activeOpacity={1} onPress={() => {
-                                            this.props.setQrCode(true)
-                                            this.props.setBarCode(false)
-                                        }}>
-                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtnTwo.png')} />
-                                            <Text style={styles.qrCodeText}>QR-код</Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity activeOpacity={1}>
-                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwo.png')} />
-                                            <Text style={styles.barCodeText}>Штрихкод</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                }
-                            </View>
-                        }
+                        <View>
+                            {this.props.QrCode &&
+                                <View>
+                                    <Text style={styles.textQR}>QR-КОД ДІЯТИМЕ 3 ХВ</Text>
+                                    <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
+                                    <TouchableOpacity activeOpacity={1}>
+                                        <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
+                                        <Text style={styles.qrCodeText}>QR-код</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity activeOpacity={1} onPress={() => {
+                                        this.props.setQrCode(false)
+                                        this.props.setBarCode(true)
+                                    }}>
+                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtn.png')} />
+                                        <Text style={styles.barCodeText}>Штрихкод</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            }
+                        </View>
+                        <View>
+                            {this.props.BarCode &&
+                                <View>
+                                    <Text style={styles.textBareCodeReplace}></Text>
+                                    <Text style={styles.textBareCode}>ШТРИХКОД ДІЯТИМЕ 3 ХВ</Text>
+                                    <Image style={styles.imageBarCode} source={require('./../assets/barcode.png')} />
+                                    <Text style={styles.barCodeTxt}>1234567890123</Text>
+                                    <TouchableOpacity activeOpacity={1} onPress={() => {
+                                        this.props.setQrCode(true)
+                                        this.props.setBarCode(false)
+                                    }}>
+                                        <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtnTwo.png')} />
+                                        <Text style={styles.qrCodeText}>QR-код</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity activeOpacity={1}>
+                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwo.png')} />
+                                        <Text style={styles.barCodeText}>Штрихкод</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            }
+                        </View>
                     </TouchableOpacity>
                 </Animated.View>
             </View>
@@ -306,11 +288,11 @@ const styles = StyleSheet.create({
         elevation: 15,
     },
     card4: {
-        width: horizontalScale(310),
-        height: verticalScale(500),
+        width: horizontalScale(320),
+        height: verticalScale(480),
         borderRadius: 10,
-        marginLeft: horizontalScale(8),
-        marginTop: verticalScale(50),
+        marginLeft: horizontalScale(4),
+        marginTop: verticalScale(70),
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -326,8 +308,8 @@ const styles = StyleSheet.create({
     image: {
         marginTop: verticalScale(-12),
         marginBottom: verticalScale(10),
-        width: horizontalScale(145),
-        height: verticalScale(220),
+        width: horizontalScale(135),
+        height: verticalScale(190),
         left: horizontalScale(21),
         bottom: verticalScale(90),
         borderColor: '#dbedd3',
@@ -354,14 +336,14 @@ const styles = StyleSheet.create({
         marginTop: verticalScale(5),
         marginBottom: verticalScale(13),
         marginLeft: horizontalScale(20),
-        fontSize: moderateScale(20),
+        fontSize: moderateScale(18),
         fontFamily: 'ukraineregular',
     },
     textDocument5: {
         marginTop: verticalScale(-15),
         marginBottom: verticalScale(16),
         marginLeft: horizontalScale(20),
-        fontSize: moderateScale(20),
+        fontSize: moderateScale(18),
         fontFamily: 'ukraineregular',
     },
     textCardLine: {
@@ -408,7 +390,7 @@ const styles = StyleSheet.create({
     },
     textCardDataText2: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(12),
+        fontSize: moderateScale(11),
         top: verticalScale(100),
         right: horizontalScale(171)
     },
@@ -427,17 +409,17 @@ const styles = StyleSheet.create({
         left: horizontalScale(185),
     },
     textCardNumber33: {
-        bottom: verticalScale(5),
+        bottom: verticalScale(10),
         left: horizontalScale(176)
     },
     textCardNumber22: {
-        top: verticalScale(220),
+        top: verticalScale(210),
         left: horizontalScale(176),
         position: 'absolute'
     },
     textCardNumberText: {
         fontFamily: 'ukraineregular',
-        fontSize: moderateScale(12)
+        fontSize: moderateScale(11)
     },
     textCardNumberText2: {
         fontFamily: 'ukraineregular',

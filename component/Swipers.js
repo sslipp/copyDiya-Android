@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
         width: horizontalScale(320),
         height: verticalScale(480),
         borderRadius: 10,
-        marginLeft: horizontalScale(0),
+        marginLeft: horizontalScale(-4),
         marginTop: verticalScale(70),
         shadowColor: "#000",
         shadowOffset: {
