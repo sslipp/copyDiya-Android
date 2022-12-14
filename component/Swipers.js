@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     textCardData: {
-        top: verticalScale(-1),
+        top: verticalScale(-4),
         left: horizontalScale(172),
     },
     textCardData333: {
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
         bottom: verticalScale(24)
     },
     textCardNumber: {
-        top: verticalScale(-8),
+        top: verticalScale(-11),
         marginLeft: horizontalScale(172)
     },
     textCardNumber333: {
