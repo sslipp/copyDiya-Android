@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
     },
     qrCodeText: {
         position: 'absolute',
-        marginTop: 340,
-        marginLeft: 71,
+        marginTop: verticalScale(390),
+        marginLeft: horizontalScale(70),
         fontSize: 13,
         fontFamily: 'ukraineregular'
     },
@@ -211,14 +211,14 @@ const styles = StyleSheet.create({
         width: horizontalScale(300),
         height: verticalScale(300),
         marginLeft: horizontalScale(11),
-        marginTop: verticalScale(70)
+        marginTop: verticalScale(45)
     },
     qrCodeBtn: {
         position: 'absolute',
-        width: 63,
-        height: 63,
-        marginLeft: 65,
-        marginTop: 277
+        width: horizontalScale(63),
+        height: verticalScale(63),
+        marginLeft: horizontalScale(65),
+        marginTop: verticalScale(325)
     },
     barCodeBtn: {
         position: 'absolute',

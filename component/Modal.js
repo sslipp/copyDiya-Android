@@ -16,12 +16,6 @@ export default function Modal({ reFam, pickImage, image }) {
     const onClose = () => SetModalVisible(false);
     const onOpen = () => SetModalVisible(true);
 
-    const navigation = useNavigation()
-
-    const repl1 = () => {
-        navigation.replace("Message")
-    }
-
     return (
         <View>
             <Overlay visible={modalVisible} onClose={onClose} closeOnTouchOutside childrenWrapperStyle={{ backgroundColor: '#fff', borderRadius: 10 }} containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
@@ -47,7 +41,7 @@ export default function Modal({ reFam, pickImage, image }) {
                     <Image style={styles.poslugy} source={require('./../assets/poslugy.png')} />
                     <Text style={styles.textP}>Послуги</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={1} onPress={repl1}>
+                <TouchableOpacity activeOpacity={1}>
                     <Image style={styles.message} source={require('./../assets/messages.png')} />
                     <Text style={styles.textM}>Повідомлення</Text>
                 </TouchableOpacity>

@@ -31,7 +31,7 @@ export default function App() {
           component={QrCode}
           options={{ headerShown: false }}
         /> */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Message"
           component={Message}
           options={{ headerShown: false }}
@@ -40,7 +40,7 @@ export default function App() {
           name="Messages"
           component={Messages}
           options={{ headerShown: false }}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
