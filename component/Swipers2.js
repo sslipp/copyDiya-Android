@@ -208,10 +208,10 @@ const styles = StyleSheet.create({
     },
     imageQRCode: {
         position: 'absolute',
-        width: 300,
-        height: 300,
-        right: 4,
-        top: 30
+        width: horizontalScale(300),
+        height: verticalScale(300),
+        marginLeft: horizontalScale(11),
+        marginTop: verticalScale(70)
     },
     qrCodeBtn: {
         position: 'absolute',
@@ -231,8 +231,8 @@ const styles = StyleSheet.create({
         color: '#888',
         fontSize: 10,
         fontFamily: 'ukrainelight',
-        marginTop: 30,
-        marginLeft: 37
+        marginTop: verticalScale(30),
+        marginLeft: horizontalScale(37)
     },
     CardLine33: {
         borderBottomColor: '#ceebbf',

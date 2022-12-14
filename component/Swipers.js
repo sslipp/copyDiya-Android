@@ -124,10 +124,10 @@ const styles = StyleSheet.create({
     },
     imageQRCode: {
         position: 'absolute',
-        width: 300,
-        height: 300,
-        right: 4,
-        top: 65
+        width: horizontalScale(300),
+        height: verticalScale(300),
+        marginLeft: horizontalScale(11.25),
+        marginTop: verticalScale(95)
     },
     CardLine33: {
         borderBottomColor: '#ceebbf',
