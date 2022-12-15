@@ -64,7 +64,7 @@ export default class Swipers extends Component {
                     <TouchableOpacity activeOpacity={1} onPress={() => this.flipCard()} style={[styles.card, { backgroundColor: this.props.bgCol2 }]} >
                         <Text></Text>
                         <View>
-                            <Text style={styles.textDocument}>єДокумент</Text><Text style={styles.kaska}></Text>
+                            <Text style={styles.textDocument}>єДокумент</Text><Image source={require('../assets/kaska.png')} style={styles.kaska} />
                         </View>
                         <View style={styles.textCardData}>
                             <Text style={styles.textCardDataText}>Дата</Text>
@@ -364,10 +364,11 @@ const styles = StyleSheet.create({
         fontFamily: 'ukraineregular',
     },
     kaska: {
-        fontSize: moderateScale(28),
+        width: horizontalScale(24),
+        height: verticalScale(24),
         position: 'absolute',
-        left: horizontalScale(150),
-        top: verticalScale(3)
+        left: horizontalScale(145),
+        top: verticalScale(7)
     },
     titleModal: {
         textAlign: 'center',

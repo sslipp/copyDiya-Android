@@ -114,7 +114,7 @@ export default class Swipers3 extends Component {
                                         this.props.setQrCode(false)
                                         this.props.setBarCode(true)
                                     }}>
-                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtn.png')} />
+                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwoThree.png')} />
                                         <Text style={styles.barCodeText}>Штрихкод</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -131,7 +131,7 @@ export default class Swipers3 extends Component {
                                         this.props.setQrCode(true)
                                         this.props.setBarCode(false)
                                     }}>
-                                        <Image style={styles.qrCodeBtnTwo} source={require('./../assets/qrCodeBtnTwo.png')} />
+                                        <Image style={styles.qrCodeBtnTwo} source={require('./../assets/qrCodeBtnTwoThree.png')} />
                                         <Text style={styles.qrCodeTextTwo}>QR-код</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity activeOpacity={1}>
@@ -437,7 +437,7 @@ const styles = StyleSheet.create({
         left: horizontalScale(185),
     },
     textCardNumber33: {
-        bottom: verticalScale(10),
+        bottom: verticalScale(5),
         left: horizontalScale(176)
     },
     textCardNumber22: {

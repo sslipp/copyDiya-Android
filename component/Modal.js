@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     },
     poslugy: {
         left: horizontalScale(119),
-        top: 84,
+        top: 85,
         width: horizontalScale(35),
         height: verticalScale(33),
         position: 'absolute'
