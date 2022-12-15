@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
-export default function Header() {
+export default function HeaderLogin() {
     return (
         <View>
             <View>

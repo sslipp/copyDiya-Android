@@ -1,21 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
-import { useNavigation } from '@react-navigation/core';
 
-export default function Header() {
-
-    const navigation = useNavigation()
-
-    const repl = () => {
-        navigation.replace("Code")
-    }
+export default function HeaderMessages({ Name }) {
 
     return (
         <View style={styles.container}>
             <View>
                 <Image source={require('./../assets/icon.png')} style={styles.image} />
-                <Text style={styles.textMessage}>Повідомлення</Text>
+                <Text style={styles.textMessage}>Вітаємо,{"\n"}{Name}</Text>
             </View>
         </View>
     );
@@ -28,7 +21,7 @@ const styles = StyleSheet.create({
     },
     textMessage: {
         fontFamily: 'ukraineregular',
-        marginTop: verticalScale(55),
+        marginTop: verticalScale(42),
         marginLeft: horizontalScale(80),
         position: 'absolute',
         fontSize: 18

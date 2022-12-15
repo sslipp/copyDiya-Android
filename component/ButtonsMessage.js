@@ -8,7 +8,7 @@ export default function ButtonsMessage() {
     const navigation = useNavigation()
 
     const repl2 = () => {
-        navigation.replace("Home")
+        navigation.navigate("Home")
     }
 
     return (
