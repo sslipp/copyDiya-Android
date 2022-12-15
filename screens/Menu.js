@@ -18,10 +18,10 @@ export default function Menu({ reFam, pickImage, image, NameTitle }) {
   const [gender, onChangegender] = React.useState('М');
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: '#E9F0F8' }}>
       <HeaderMessages Name={NameTitle} />
-      <View>
-        {image && <Image source={{ uri: image }} style={styles.imagess} />}
+      {image && <Image source={{ uri: image }} style={styles.imagess} />}
+      <View style={styles.ContainerInput}>
         <View>
           <Button title='Выбрать фото' style={styles.btns} onPress={pickImage} />
           <Text style={styles.textSettingss}>Редактировать фамилию</Text>
@@ -46,10 +46,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  ContainerInput: {
+    marginTop: verticalScale(180)
+  },
   imagess: {
-    width: 100,
-    height: 130,
-    marginBottom: 10,
+    width: horizontalScale(120),
+    position: 'absolute',
+    height: verticalScale(165),
+    marginLeft: horizontalScale(130),
+    marginTop: verticalScale(120),
     borderColor: '#cddcf1',
     borderWidth: 2
   },

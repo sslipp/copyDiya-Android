@@ -12,30 +12,52 @@ export default function ButtonsMessage() {
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <View style={styles.buttons}>
                 <TouchableOpacity activeOpacity={1}>
                     <Image style={styles.poslugy} source={require('./../assets/poslugy.png')} />
                     <Text style={styles.textP}>Послуги</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1}>
-                    <Image style={styles.message} source={require('./../assets/messageu.png')} />
+                    <Image style={styles.message} source={require('./../assets/messages.png')} />
                     <Text style={styles.textM}>Повідомлення</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1} onPress={repl2}>
-                    <Image style={styles.settings} source={require('./../assets/documents.png')} />
+                    <Image style={styles.settings} source={require('./../assets/document.png')} />
                     <Text style={styles.textD}>Документи</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1}>
                     <Image style={styles.menu} source={require('./../assets/menu.png')} />
                     <Text style={styles.textN}>Меню</Text>
                 </TouchableOpacity>
+                <View style={styles.CardLine33}></View>
+                <View style={styles.bg}></View>
             </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        position: 'absolute'
+    },
+    CardLine33: {
+        borderBottomColor: '#C7D9E5',
+        borderBottomWidth: 2,
+        width: horizontalScale(380),
+        marginTop: verticalScale(4),
+        marginLeft: horizontalScale(-5),
+        borderRadius: 20
+    },
+    bg: {
+        position: 'absolute',
+        width: horizontalScale(400),
+        marginLeft: horizontalScale(-10),
+        height: verticalScale(95),
+        marginTop: verticalScale(65),
+        zIndex: -1,
+        backgroundColor: '#DEE8F1'
+    },
     imagess: {
         width: 100,
         height: 130,
@@ -65,7 +87,9 @@ const styles = StyleSheet.create({
         position: 'absolute'
     },
     buttons: {
-        bottom: verticalScale(90)
+        bottom: verticalScale(90),
+        marginTop: verticalScale(783.7),
+        marginLeft: horizontalScale(5)
     },
     buttons2: {
         top: 24,
@@ -99,7 +123,7 @@ const styles = StyleSheet.create({
     },
     poslugy: {
         left: horizontalScale(119),
-        top: 84,
+        top: 85,
         width: horizontalScale(35),
         height: verticalScale(33),
         position: 'absolute'
@@ -114,7 +138,7 @@ const styles = StyleSheet.create({
         left: horizontalScale(220),
         top: 71,
         width: 31,
-        height: 32.5,
+        height: 32,
         position: 'absolute'
     },
     textM: {
@@ -122,79 +146,5 @@ const styles = StyleSheet.create({
         top: 103,
         fontSize: moderateScale(10),
         left: horizontalScale(193)
-    },
-    settingsText: {
-        fontFamily: 'ukraineregular',
-        padding: 10,
-        fontSize: 15
-    },
-    input: {
-        height: 40,
-        margin: 5,
-        borderWidth: 1,
-        padding: 10,
-    },
-    textSettings: {
-        marginLeft: 11,
-        fontFamily: 'ukraineregular',
-        fontSize: 10
-    },
-    textSettingss: {
-        marginLeft: 11,
-        marginTop: 5,
-        fontFamily: 'ukraineregular',
-        fontSize: 10
-    },
-    menu2: {
-        left: 316,
-        top: 94,
-        width: 35,
-        height: 23,
-        position: 'absolute'
-    },
-    textN2: {
-        fontFamily: 'ukraineregular',
-        top: 120,
-        fontSize: 10,
-        left: 316
-    },
-    settings2: {
-        width: 35,
-        height: 30,
-        top: 102,
-        left: 35,
-        position: 'absolute'
-    },
-    textD2: {
-        fontFamily: 'ukraineregular',
-        fontSize: 10,
-        top: 132,
-        left: 24
-    },
-    poslugy2: {
-        left: 124,
-        top: 130,
-        width: 40,
-        height: 33,
-        position: 'absolute'
-    },
-    textP2: {
-        fontFamily: 'ukraineregular',
-        fontSize: 10,
-        top: 163,
-        left: 119
-    },
-    message2: {
-        left: 226,
-        top: 118,
-        width: 32,
-        height: 32,
-        position: 'absolute'
-    },
-    textM2: {
-        fontFamily: 'ukraineregular',
-        top: 150,
-        fontSize: 10,
-        left: 199
     },
 });

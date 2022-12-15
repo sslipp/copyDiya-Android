@@ -16,7 +16,7 @@ export default function HeaderMessages({ Name }) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#C6D9E8',
+        backgroundColor: '#C8D8E7',
         paddingBottom: 20
     },
     textMessage: {
