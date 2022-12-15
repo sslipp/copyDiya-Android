@@ -4,7 +4,7 @@
     "slug": "diia",
     "version": "1.0.2",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icons.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splashs.png",
