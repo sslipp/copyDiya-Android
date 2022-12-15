@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
     flex: 1
   },
   ContainerInput: {
-    marginTop: verticalScale(180)
+    marginTop: verticalScale(205)
   },
   imagess: {
     width: horizontalScale(120),
     position: 'absolute',
     height: verticalScale(165),
     marginLeft: horizontalScale(130),
-    marginTop: verticalScale(120),
+    marginTop: verticalScale(140),
     borderColor: '#cddcf1',
     borderWidth: 2
   },

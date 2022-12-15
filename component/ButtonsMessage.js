@@ -28,6 +28,7 @@ export default function ButtonsMessage() {
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1}>
                     <Image style={styles.menu} source={require('./../assets/menu.png')} />
+                    <Image style={styles.menuTwo} source={require('./../assets/menu.png')} />
                     <Text style={styles.textN}>Меню</Text>
                 </TouchableOpacity>
                 <View style={styles.CardLine33}></View>
@@ -97,7 +98,14 @@ const styles = StyleSheet.create({
     },
     menu: {
         left: horizontalScale(310),
-        top: 46,
+        top: verticalScale(46),
+        width: 32,
+        height: 23,
+        position: 'absolute'
+    },
+    menuTwo: {
+        left: horizontalScale(310),
+        top: verticalScale(47.4),
         width: 32,
         height: 23,
         position: 'absolute'

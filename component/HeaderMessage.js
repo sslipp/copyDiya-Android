@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     },
     textMessage: {
         fontFamily: 'ukraineregular',
-        marginTop: verticalScale(42),
+        marginTop: verticalScale(52),
         marginLeft: horizontalScale(80),
         position: 'absolute',
         fontSize: 18
     },
     image: {
-        marginTop: verticalScale(40),
+        marginTop: verticalScale(50),
         marginLeft: horizontalScale(25),
         width: 50,
         height: 50,
