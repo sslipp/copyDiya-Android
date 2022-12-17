@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, 
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 import { useNavigation } from '@react-navigation/core';
 
-export default function ButtonsMessage() {
+export default function ButtonsMessage({ reFam, Fam, Name, Otche, Date, gender }) {
 
     const navigation = useNavigation()
 
@@ -22,8 +22,11 @@ export default function ButtonsMessage() {
                     <Image style={styles.message} source={require('./../assets/messages.png')} />
                     <Text style={styles.textM}>Повідомлення</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={1} onPress={repl2}>
-                    <Image style={styles.settings} source={require('./../assets/document.png')} />
+                <TouchableOpacity activeOpacity={1} onPress={() => {
+                    repl2()
+                    reFam(Fam, Name, Otche, Date, gender)
+                }}>
+                    <Image style={styles.settings} source={require('./../assets/documents.png')} />
                     <Text style={styles.textD}>Документи</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={1}>
@@ -117,9 +120,9 @@ const styles = StyleSheet.create({
         left: horizontalScale(308)
     },
     settings: {
-        width: horizontalScale(33),
+        width: horizontalScale(34),
         height: 33,
-        top: 53,
+        top: 54,
         left: horizontalScale(30),
         position: 'absolute'
     },

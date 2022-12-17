@@ -66,7 +66,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Menu"
-          children={() => <Menu reFam={reFam} pickImage={pickImage} image={image} NameTitle={Name} />}
+          children={() => <Menu reFam={reFam} pickImage={pickImage} image={image} />}
           options={{
             tabBarStyle: { display: "none" },
             headerShown: false,

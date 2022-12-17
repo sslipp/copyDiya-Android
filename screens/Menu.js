@@ -25,19 +25,18 @@ export default function Menu({ reFam, pickImage, image, NameTitle }) {
         <View>
           <Button title='Выбрать фото' style={styles.btns} onPress={pickImage} />
           <Text style={styles.textSettingss}>Редактировать фамилию</Text>
-          <TextInput style={styles.input} onChangeText={onChangeFam} value={Fam} placeholder="Фамилия" />
+          <TextInput style={styles.input} onChangeText={onChangeFam} value={Fam} placeholder="Фамилия" maxLength={21} />
           <Text style={styles.textSettings}>Редактировать имя</Text>
-          <TextInput style={styles.input} onChangeText={onChangeName} value={Name} placeholder="Имя" />
+          <TextInput style={styles.input} onChangeText={onChangeName} value={Name} placeholder="Имя" maxLength={19} />
           <Text style={styles.textSettings}>Редактировать отчество</Text>
-          <TextInput style={styles.input} onChangeText={onChangeOtche} value={Otche} placeholder="Отчество" />
+          <TextInput style={styles.input} onChangeText={onChangeOtche} value={Otche} placeholder="Отчество" maxLength={17} />
           <Text style={styles.textSettings}>Редактировать год рождения</Text>
-          <TextInput style={styles.input} onChangeText={onChangeDate} value={Date} placeholder="Дата народження: 24.08.1991" />
+          <TextInput style={styles.input} onChangeText={onChangeDate} value={Date} placeholder="Дата народження: 24.08.1991" maxLength={10} />
           <Text style={styles.textSettings}>Редактировать пол</Text>
-          <TextInput style={styles.input} onChangeText={onChangegender} value={gender} placeholder="Пол" />
+          <TextInput style={styles.input} onChangeText={onChangegender} value={gender} placeholder="Пол" maxLength={1} />
         </View>
-        <Button onPress={() => (reFam(Fam, Name, Otche, Date, gender))} title='Изменить' />
       </View>
-      <ButtonsMessage />
+      <ButtonsMessage reFam={reFam} Fam={Fam} Name={Name} Otche={Otche} Date={Date} gender={gender} />
     </View>
   );
 }

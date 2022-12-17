@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { horizontalScale, moderateScale, verticalScale } from './Metrics';
 
-export default function HeaderMessages({ Name }) {
+export default function HeaderMessages() {
 
     return (
         <View style={styles.container}>
             <View>
                 <Image source={require('./../assets/icon.png')} style={styles.image} />
-                <Text style={styles.textMessage}>Вітаємо,{"\n"}{Name}</Text>
+                <Text style={styles.textMessage}>Налаштування</Text>
             </View>
         </View>
     );
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     textMessage: {
         fontFamily: 'ukraineregular',
-        marginTop: verticalScale(52),
+        marginTop: verticalScale(61),
         marginLeft: horizontalScale(80),
         position: 'absolute',
         fontSize: 18

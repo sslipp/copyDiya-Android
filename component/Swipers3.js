@@ -106,17 +106,19 @@ export default class Swipers3 extends Component {
                                 <View>
                                     <Text style={styles.textQR}>QR-КОД ДІЯТИМЕ 3 ХВ</Text>
                                     <Image style={styles.imageQRCode} source={require('./../assets/qrcodeCard.png')} />
-                                    <TouchableOpacity activeOpacity={1}>
-                                        <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
-                                        <Text style={styles.qrCodeText}>QR-код</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity activeOpacity={1} onPress={() => {
-                                        this.props.setQrCode(false)
-                                        this.props.setBarCode(true)
-                                    }}>
-                                        <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwoThree.png')} />
-                                        <Text style={styles.barCodeText}>Штрихкод</Text>
-                                    </TouchableOpacity>
+                                    <View style={styles.buttonsQrCode}>
+                                        <TouchableOpacity activeOpacity={1}>
+                                            <Image style={styles.qrCodeBtn} source={require('./../assets/qrCodeBtn.png')} />
+                                            <Text style={styles.qrCodeText}>QR-код</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity activeOpacity={1} onPress={() => {
+                                            this.props.setQrCode(false)
+                                            this.props.setBarCode(true)
+                                        }}>
+                                            <Image style={styles.barCodeBtn} source={require('./../assets/barCodeBtnTwoThree.png')} />
+                                            <Text style={styles.barCodeText}>Штрихкод</Text>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             }
                         </View>
@@ -127,17 +129,19 @@ export default class Swipers3 extends Component {
                                     <Text style={styles.textBareCode}>ШТРИХКОД ДІЯТИМЕ 3 ХВ</Text>
                                     <Image style={styles.imageBarCode} source={require('./../assets/barcode.png')} />
                                     <Text style={styles.barCodeTxt}>1234567890123</Text>
-                                    <TouchableOpacity activeOpacity={1} onPress={() => {
-                                        this.props.setQrCode(true)
-                                        this.props.setBarCode(false)
-                                    }}>
-                                        <Image style={styles.qrCodeBtnTwo} source={require('./../assets/qrCodeBtnTwoThree.png')} />
-                                        <Text style={styles.qrCodeTextTwo}>QR-код</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity activeOpacity={1}>
-                                        <Image style={styles.barCodeBtnTwo} source={require('./../assets/barCodeBtnTwo.png')} />
-                                        <Text style={styles.barCodeTextTwo}>Штрихкод</Text>
-                                    </TouchableOpacity>
+                                    <View style={styles.buttonsQrCode}>
+                                        <TouchableOpacity activeOpacity={1} onPress={() => {
+                                            this.props.setQrCode(true)
+                                            this.props.setBarCode(false)
+                                        }}>
+                                            <Image style={styles.qrCodeBtnTwo} source={require('./../assets/qrCodeBtnTwoThree.png')} />
+                                            <Text style={styles.qrCodeTextTwo}>QR-код</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity activeOpacity={1}>
+                                            <Image style={styles.barCodeBtnTwo} source={require('./../assets/barCodeBtnTwo.png')} />
+                                            <Text style={styles.barCodeTextTwo}>Штрихкод</Text>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             }
                         </View>
@@ -152,6 +156,9 @@ const styles = StyleSheet.create({
     textCardNumberText22: {
         fontFamily: 'ukraineregular',
         fontSize: moderateScale(12)
+    },
+    buttonsQrCode: {
+        marginLeft: horizontalScale(10)
     },
     qrCodeBtnTwo: {
         position: 'absolute',
