@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import { ImageBackground, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { useCallback, useState, useEffect } from 'react';
+import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, BackHandler } from 'react-native';
 import Header from '../component/Header';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -26,6 +26,11 @@ export default function HomeScreen({ Fam, Name, Otch, Date, gender, image, pickI
   const [BarCode, setBarCode] = useState(false);
   const [QrCodeTwo, setQrCodeTwo] = useState(true);
   const [BarCodeTwo, setBarCodeTwo] = useState(false);
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => true)
+    return () => backHandler.remove()
+  }, [])
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
