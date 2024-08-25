@@ -14,8 +14,8 @@
 1. Склонируйте репозиторий:
 
     ```bash
-    git clone https://github.com/ваш-пользователь/fake-diya-app.git
-    cd fake-diya-app
+    git clone https://github.com/sslipp/copyDiya-Android
+    cd copyDiya-Android
     ```
 
 2. Установите зависимости:
